@@ -32,6 +32,7 @@ alias nv=nvim
 
 # Npm / Npx / NodeJS Alias
 alias n="npm"
+alias na='n audit'
 alias nr='n run'
 alias nrb='nr build'
 alias nrbu='nrb -w ui'

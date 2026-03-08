@@ -51,3 +51,37 @@ alias x="npx"
 alias v="x vitest"
 alias j="x jest"
 
+# Register git completion helpers for the aliases that need them.
+if type __git_complete >/dev/null 2>&1; then
+	git_alias_completions=(
+		"g:_git"
+		"gs:_git_status"
+		"gst:_git_status"
+		"gbr:_git_branch"
+		"gcm:_git_commit"
+		"gd:_git_diff"
+		"gl:_git_log"
+		"grs:_git_restore"
+		"gcp:_git_cherry_pick"
+		"grb:_git_rebase"
+		"gco:_git_checkout"
+		"gpro:_git_remote"
+		"gpu:_git_push"
+		"gpushu:_git_push"
+		"gf:_git_fetch"
+		"ga:_git_add"
+		"gad:_git_add"
+		"gpull:_git_pull"
+		"gpul:_git_pull"
+		"gt:_git_log"
+		"gcl:_git_clone"
+		"grv:_git_revert"
+		"gqpr:_git"
+	)
+	for completion in "${git_alias_completions[@]}"; do
+		alias_name=${completion%%:*}
+		func_name=${completion#*:}
+		__git_complete "$alias_name" "$func_name"
+	done
+fi
+

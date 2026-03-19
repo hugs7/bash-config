@@ -45,6 +45,7 @@ alias nta='nt -w api'
 alias nrd='nr dev'
 alias nrdu='nrd -w ui'
 alias nrda='nrd -w api'
+alias nrp='nr preview'
 alias ni='n i'
 alias nci='n ci'
 alias x="npx"

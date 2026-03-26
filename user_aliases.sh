@@ -88,3 +88,7 @@ if type __git_complete >/dev/null 2>&1; then
 	done
 fi
 
+# Amp
+alias a='amp'
+alias atc='a threads continue'
+alias atcl='atc --last'

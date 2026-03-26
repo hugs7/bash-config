@@ -7,6 +7,7 @@ alias gcm='g cm'
 alias gd='g diff --word-diff=color'
 alias gl='g log'
 alias grs='g rs'
+alias gre='g re'
 alias gcp='g cp'
 alias grb='g rb'
 alias gco='g co'
@@ -63,6 +64,7 @@ if type __git_complete >/dev/null 2>&1; then
 		"gd:_git_diff"
 		"gl:_git_log"
 		"grs:_git_restore"
+    "gre:_git_reset"
 		"gcp:_git_cherry_pick"
 		"grb:_git_rebase"
 		"gco:_git_checkout"

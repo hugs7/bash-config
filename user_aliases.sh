@@ -1,3 +1,6 @@
+# Bash aliases
+alias h=history
+
 # Git aliases
 alias g=git
 alias gs='g st'

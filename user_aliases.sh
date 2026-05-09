@@ -56,6 +56,9 @@ alias x="npx"
 alias v="x vitest"
 alias j="x jest"
 
+# pnpm
+alias p=pnpm
+
 # Register git completion helpers for the aliases that need them.
 if type __git_complete >/dev/null 2>&1; then
 	git_alias_completions=(

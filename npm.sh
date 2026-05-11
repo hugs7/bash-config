@@ -23,27 +23,36 @@ cleannode() {
   echo "✅ Done! Removed $count director$([ $count -eq 1 ] && echo 'y' || echo 'ies')"
 }
 
-cleanall() {
-  local dir="${1:-.}"
-  echo "🧹 Cleaning up node_modules and package-lock.json..."
-  echo ""
-  
-  # Remove node_modules
-  cleannode "$dir"
-  
-  echo ""
-  echo "🔍 Searching for package-lock.json files..."
-  local locks=($(find "$dir" -type f -name package-lock.json))
+cleanlocks() {
+  local name="$1"
+  local dir="$2"
+  echo "🔍 Searching for $name files..."
+  local locks=($(find "$dir" -type f -name "$name"))
   local count=${#locks[@]}
-  
+
   if [ $count -eq 0 ]; then
-    echo "✓ No package-lock.json files found"
+    echo "✓ No $name files found"
   else
-    echo "🗑️  Found $count package-lock.json file$([ $count -eq 1 ] && echo '' || echo 's')"
-    find "$dir" -type f -name package-lock.json -delete
+    echo "🗑️  Found $count $name file$([ $count -eq 1 ] && echo '' || echo 's')"
+    find "$dir" -type f -name "$name" -delete
     echo "✅ Removed $count lock file$([ $count -eq 1 ] && echo '' || echo 's')"
   fi
-  
+}
+
+cleanall() {
+  local dir="${1:-.}"
+  echo "🧹 Cleaning up node_modules, package-lock.json, pnpm-lock.yaml..."
+  echo ""
+
+  # Remove node_modules
+  cleannode "$dir"
+
+  echo ""
+  cleanlocks package-lock.json "$dir"
+
+  echo ""
+  cleanlocks pnpm-lock.yaml "$dir"
+
   echo ""
   echo "🎉 Cleanup complete!"
 }

@@ -62,6 +62,7 @@ alias px='p dlx'
 alias pe='p exec'
 
 alias pi='p install'
+alias pci='p ci'
 alias pif='pi --frozen-lockfile'
 alias pid='pi --prod=false'
 alias prun='p run'

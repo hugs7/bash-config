@@ -56,8 +56,67 @@ alias x="npx"
 alias v="x vitest"
 alias j="x jest"
 
-# pnpm
-alias p=pnpm
+# Pnpm / Pnpx Alias
+alias p="pnpm"
+alias px='p dlx'
+alias pe='p exec'
+
+alias pi='p install'
+alias pif='pi --frozen-lockfile'
+alias pid='pi --prod=false'
+alias prun='p run'
+alias pr='prun'
+
+alias pa='p add'
+alias pad='pa -D'
+alias pae='pa -E'
+alias pade='pad -E'
+alias pag='pa -g'
+alias prm='p remove'
+alias pup='p update'
+alias pupl='pup --latest'
+alias po='p outdated'
+alias paudit='p audit'
+alias pfix='paudit --fix'
+
+alias pd='pr dev'
+alias pb='pr build'
+alias pte='pr test'
+alias ptw='pte --watch'
+alias ptu='pte -- --update'
+alias pl='pr lint'
+alias plf='pl --fix'
+alias pf='pr format'
+alias pc='pr check'
+alias pst='pr start'
+alias pp='pr preview'
+
+alias pw='p -r'
+alias pwr='pw run'
+alias pwi='pw install'
+alias pwb='pwr build'
+alias pwt='pwr test'
+alias pwdv='pwr dev'
+alias pwl='pwr lint'
+alias pwc='pwr check'
+
+alias pfl='p --filter'
+alias pfr='p -r --filter'
+alias pui='pfl ui'
+alias papi='pfl api'
+alias pdu='pui run dev'
+alias pda='papi run dev'
+alias pbu='pui run build'
+alias pba='papi run build'
+alias ptui='pui run test'
+alias ptapi='papi run test'
+
+alias pv='px vitest'
+alias pj='px jest'
+alias pn='px next'
+alias ptsx='px tsx'
+alias pcov='pte -- --coverage'
+alias pbt='pi && pb && pte'
 
 # Register git completion helpers for the aliases that need them.
 if type __git_complete >/dev/null 2>&1; then

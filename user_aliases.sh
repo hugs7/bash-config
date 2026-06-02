@@ -26,6 +26,7 @@ alias gt='g tree'
 alias gcl='g cl'
 alias grv='g rv'
 alias gqpr='g qpr'
+alias gdb='g db'
 alias pt='g pull; g tree'
 
 # Clipboard

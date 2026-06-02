@@ -121,6 +121,16 @@ alias pbt='pi && pb && pte'
 
 # Register git completion helpers for the aliases that need them.
 if type __git_complete >/dev/null 2>&1; then
+	_git_delete_branch_alias() {
+		__git_complete_refs --mode=heads
+	}
+	_git_delete_branch() {
+		__git_complete_refs --mode=heads
+	}
+	_git_db() {
+		__git_complete_refs --mode=heads
+	}
+
 	git_alias_completions=(
 		"g:_git"
 		"gs:_git_status"
@@ -146,6 +156,7 @@ if type __git_complete >/dev/null 2>&1; then
 		"gcl:_git_clone"
 		"grv:_git_revert"
 		"gqpr:_git"
+		"gdb:_git_delete_branch_alias"
 	)
 	for completion in "${git_alias_completions[@]}"; do
 		alias_name=${completion%%:*}

@@ -6,14 +6,14 @@ This is just a repo where I put shared bash config. You're welcome to share / fo
 
 ```bash
 # From root directory
-$ git clone git@github.com:hugs7/bash-config.git .bash_config
+$ git clone git@github.com:hugs7/bash-config.git ~/.bash-config
 ```
 
 In your `~/.bashrc` file
 
 ```sh
-# Import shared bash_config
-if [ -f ~/.bash_config/bash_config.sh ]; then
-  . ~/.bash_config/bash_config.sh
+# Import shared bash-config
+if [ -f ~/.bash-config/bash-config.sh ]; then
+  . ~/.bash-config/bash-config.sh
 fi
 ```

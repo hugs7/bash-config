@@ -30,7 +30,7 @@ pathadd_safe() {
 pathadd_safe "$HOME/.local/bin"
 
 # Get the directory where this script is located
-BASH_CONFIG_DIR="$HOME/.bash_config"
+BASH_CONFIG_DIR="$HOME/.bash-config"
 
 # Function to import modules
 import_module() {

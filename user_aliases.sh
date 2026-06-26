@@ -123,14 +123,25 @@ alias pbt='pi && pb && pte'
 
 # Register git completion helpers for the aliases that need them.
 if type __git_complete >/dev/null 2>&1; then
+	# Complete both local and remote branch names (remote prefix stripped, and
+	# origin/HEAD filtered out) so `git db` can target remote-only branches.
+	_git_complete_all_branches() {
+		__gitcomp_nl "$(
+			{
+				git for-each-ref --format='%(refname:short)' refs/heads 2>/dev/null
+				git for-each-ref --format='%(refname)' refs/remotes 2>/dev/null |
+					grep -v '/HEAD$' | sed 's#^refs/remotes/[^/]*/##'
+			} | sort -u
+		)"
+	}
 	_git_delete_branch_alias() {
-		__git_complete_refs --mode=heads
+		_git_complete_all_branches
 	}
 	_git_delete_branch() {
-		__git_complete_refs --mode=heads
+		_git_complete_all_branches
 	}
 	_git_db() {
-		__git_complete_refs --mode=heads
+		_git_complete_all_branches
 	}
 
 	git_alias_completions=(

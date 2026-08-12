@@ -1,6 +1,9 @@
 # Bash aliases
 alias h=history
 
+# System
+alias sau='sudo apt update && sudo apt upgrade -y'
+
 # Git aliases
 alias g=git
 alias gs='g st'

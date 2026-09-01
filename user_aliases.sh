@@ -3,6 +3,7 @@ alias h=history
 
 # System
 alias sau='sudo apt update && sudo apt upgrade -y'
+alias df='df -hT --exclude-type=tmpfs --exclude-type=devtmpfs --exclude-type=efivarfs --exclude-type=proc --exclude-type=sysfs --exclude-type=cgroup --exclude-type=debugfs --exclude-type=tracefs --exclude-type=pstore --exclude-type=bpf --exclude-type=securityfs --exclude-type=devpts'
 
 # Git aliases
 alias g=git

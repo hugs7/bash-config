@@ -37,6 +37,12 @@ alias pt='g pull; g tree'
 # Clipboard
 alias clip='xclip -selection clipboard'
 
+# Find directories by name, case-insensitively. Additional arguments are
+# passed directly to fd, for example: fdir config ~/projects --max-depth 3
+fdir() {
+	fdfind --type directory --ignore-case "$@"
+}
+
 # Neovim
 alias nv=nvim
 

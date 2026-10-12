@@ -57,3 +57,13 @@ cleanall() {
   echo "🎉 Cleanup complete!"
 }
 
+regen-lock() {
+  local dir="${1:-.}"
+  cleanall
+  pi
+  git cm -am "fix: regenerate pnpm-lock"
+  echo ""
+  echo "🎉 Regenerate pnpm-lock complete!"
+
+}
+
